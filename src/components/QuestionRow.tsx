@@ -4,6 +4,7 @@ import { Star } from "lucide-react";
 import { SectionIcon } from "@/components/layout/SectionIdentity";
 import { TYPE_META, type QuestionMeta } from "@/lib/pte";
 import { SOURCE_BADGE, statusOf } from "@/lib/pte/question-status";
+import type { QuestionStat } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 
 interface QuestionRowProps {
