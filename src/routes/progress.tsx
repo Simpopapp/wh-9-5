@@ -422,9 +422,7 @@ function ProgressPage() {
                   <p className="text-xs text-muted-foreground">
                     {comparison.currentCount} tentativa(s)
                   </p>
-                  <p className="text-[11px] text-muted-foreground">
-                    {comparison.currentMixLabel}
-                  </p>
+                  <p className="text-[11px] text-muted-foreground">{comparison.currentMixLabel}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">7 dias anteriores</p>
@@ -434,9 +432,7 @@ function ProgressPage() {
                   <p className="text-xs text-muted-foreground">
                     {comparison.previousCount} tentativa(s)
                   </p>
-                  <p className="text-[11px] text-muted-foreground">
-                    {comparison.previousMixLabel}
-                  </p>
+                  <p className="text-[11px] text-muted-foreground">{comparison.previousMixLabel}</p>
                 </div>
                 {comparison.delta !== null ? (
                   <span
