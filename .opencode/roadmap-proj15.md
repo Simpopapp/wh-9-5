@@ -54,9 +54,9 @@ Gates por fase conforme seção 19 do Plan.md; revisor: agente principal (subage
 ## Fase 6 · Manutenção
 - [x] D15-6a Serviço IA compartilhado: `src/lib/plus/aiGradeRun.ts` (`runAiGrade` + `aiGradeFailReason`) consumido por `useAiGrade` (stale-response preservado via runRef) e `ExamAiAnalysis`
 - [x] D15-6b ExamRunner sem cache/request IA próprios: revisão extraída para `examReview.tsx` + `examReviewShared.ts` (gabarito/CAUSE_LABEL/ReviewRow); ExamRunner 1.649 linhas
-- [ ] D15-6c Exports não consumidos: visibilidade reduzida (rg antes de cada mudança) — PENDENTE: keyToMidnight, isBeforeDayKey, typesOfSection, flushAiCache, essayContentWords
-- [ ] D15-6d 12 warnings de lint: corrigir os baratos, documentar os deliberados — PENDENTE (12 warnings restaurados à base após a extração; varredura/documentação não feita)
-- Gates (parciais, D15-6a/6b): vitest 645/645 · tsgo limpo · lint 0 erros · build/pendência de confirmação no próximo build · E2E essay prática+exame ainda não rodada nesta fase
+- [x] D15-6c Exports não consumidos: visibilidade reduzida (rg antes de cada mudança) — `keyToMidnight`, `isBeforeDayKey` (dates.ts), `typesOfSection` (offline.ts), `flushAiCache` (aiCache.ts), `essayContentWords` (essay.ts) agora internos; rg confirma 0 consumidores fora dos módulos
+- [x] D15-6d 12 warnings de lint: corrigidos os reais (PracticeShell: rótulo de vencimento por render — memo sem dep artificial; deps do atalho com `loadDraft`; `statusOf`+`SOURCE_BADGE` extraídos para `src/lib/pte/question-status.ts`), deliberados documentados (override `react-refresh` off em `src/components/ui/**` no eslint.config.js — convenção shadcn; disable no arquivo em SectionIdentity — tokens co-localizados por design PRD §8). 0 warnings.
+- Gates (F6 completa): vitest 645/645 · tsgo limpo · lint 0 erros 0 warnings · build OK (precache 122, sw bin9l8p) · E2E essay prática+exame (proj14_f6.py) verde 43/43 — incluiu 2 regressões de /progress corrigidas: legend de prontidão sem wrap (overflow 74px em 390px) e contraste do rótulo de mistura (`muted-foreground/80` → `muted-foreground`, mesmo critério D15-4e)
 
 ## Fase 7 · Fechamento AAA
 - [ ] D15-7a E2E versionado `scripts/e2e/proj15_f7.py` (correção→retry→transferência, lapse→treino, undo vocab, 11 rotas 390×844)
