@@ -59,7 +59,7 @@ Gates por fase conforme seção 19 do Plan.md; revisor: agente principal (subage
 - Gates (F6 completa): vitest 645/645 · tsgo limpo · lint 0 erros 0 warnings · build OK (precache 122, sw bin9l8p) · E2E essay prática+exame (proj14_f6.py) verde 43/43 — incluiu 2 regressões de /progress corrigidas: legend de prontidão sem wrap (overflow 74px em 390px) e contraste do rótulo de mistura (`muted-foreground/80` → `muted-foreground`, mesmo critério D15-4e)
 
 ## Fase 7 · Fechamento AAA
-- [ ] D15-7a E2E versionado `scripts/e2e/proj15_f7.py` (correção→retry→transferência, lapse→treino, undo vocab, 11 rotas 390×844)
+- [ ] D15-7a E2E versionado `scripts/e2e/proj15_f7.py` (correção→retry→transferência, lapse→treino, undo vocab, 11 rotas 390×844) — EM ANDAMENTO: 53/56 verdes (lapso→recomendação ✓ · ciclo correção→retry→transferência ✓ · varredura 11 rotas ✓); pendente: fluxo undo-vocab (o import do backup com vocabulary no roteiro completo não chega à lista — o MESMO backup, importado isoladamente, importa e exibe "serenity"; investigar a interação com o estado da sessão anterior). Obs: `proj14_f6.py` usa `"qid"` em ARRAY nos fixtures — o migrador descarta essas tentativas (silenciosamente); fixtures novos devem usar qid string.
 - [ ] D15-7b Gates completos + varredura final (console limpo, axe 0, overflow 0)
 - [ ] D15-7c AGENTS.md atualizado + aviso ao monitor (`.opencode/monitor-notice-proj15.md`)
 - Gates: todos os anteriores + E2E 100% verde
