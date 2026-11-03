@@ -240,7 +240,7 @@ async def flow_correction_cycle(page: Page, errors: list[str], backup: Path) -> 
         "() => (document.querySelector('[aria-label], [class*=session]')?.textContent ?? '')"
     )
     body = await page.evaluate("() => document.body.innerText")
-    expect("correção: banner mostra Sessão · 1 de 2 (erro + transferência)", "1 de 2" in body, body[:300])
+    expect("correção: banner mostra sessão de 2 (erro + transferência)", "Sessão · 0 de 2" in body, body[:300])
 
     # Retry direcionado DENTRO da prática: resposta errada reprova…
     textarea = page.locator("textarea").first
