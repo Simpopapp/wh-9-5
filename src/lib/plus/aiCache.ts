@@ -222,7 +222,8 @@ function scheduleSave(): void {
   }, SAVE_DELAY_MS);
 }
 
-export function flushAiCache(): void {
+/** D15-6c: usada apenas pelos listeners pagehide/visibilitychange deste módulo — visibilidade interna. */
+function flushAiCache(): void {
   if (saveTimer !== null) {
     clearTimeout(saveTimer);
     saveTimer = null;
