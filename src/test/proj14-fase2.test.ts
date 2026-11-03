@@ -3,7 +3,7 @@
 // critério) e n exibido junto aos scores de tópico.
 import { describe, expect, it } from "vitest";
 
-import { statusOf } from "@/components/QuestionRow";
+import { statusOf } from "@/lib/pte/question-status";
 import { allMeta, firstIdOfType, TYPE_META } from "@/lib/pte";
 import { buildNextAction } from "@/lib/next-action";
 import { buildProgressOverview } from "@/lib/progress-overview";

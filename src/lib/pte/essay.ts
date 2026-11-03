@@ -91,7 +91,7 @@ export function gradeEssay(answer: string, sample: string): EssayGrade {
   };
 }
 
-/** Palavras de conteúdo (para estatísticas e destaque do modelo). */
-export function essayContentWords(text: string): string[] {
+/** Palavras de conteúdo (para estatísticas e destaque do modelo). D15-6c: sem consumidores externos — uso interno. */
+function essayContentWords(text: string): string[] {
   return contentWords(text);
 }

@@ -117,7 +117,8 @@ export async function downloadForOffline(types: TaskType[] = ALL_TASK_TYPES): Pr
   return failed;
 }
 
-export function typesOfSection(section: string): TaskType[] {
+/** D15-6c: sem consumidores externos — visibilidade reduzida a uso interno. */
+function typesOfSection(section: string): TaskType[] {
   return ALL_TASK_TYPES.filter((t) => TYPE_META[t].section === section);
 }
 

@@ -1,3 +1,8 @@
+/* eslint-disable react-refresh/only-export-components --
+   D15-6d (deliberado): os tokens de identidade de seção (PRD §8 — ícone, cor de
+   texto e fundo) são co-localizados com SectionIcon de propósito: este arquivo é
+   a ÚNICA fonte da identidade visual de seção ("nunca cor avulsa"). Extraí-los
+   dividiria essa fonte; o custo de fast-refresh neles é nulo (são constantes). */
 import { BookOpen, Headphones, Mic, PenLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 

@@ -2,8 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { Star } from "lucide-react";
 
 import { SectionIcon } from "@/components/layout/SectionIdentity";
-import { TYPE_META, type QuestionMeta, type SourceClass } from "@/lib/pte";
-import { isMasteredStat, type QuestionStat } from "@/lib/storage";
+import { TYPE_META, type QuestionMeta } from "@/lib/pte";
+import { SOURCE_BADGE, statusOf } from "@/lib/pte/question-status";
+import type { QuestionStat } from "@/lib/storage";
 import { cn } from "@/lib/utils";
 
 interface QuestionRowProps {
@@ -18,50 +19,6 @@ interface QuestionRowProps {
 }
 
 const DIFFICULTY_LABEL = { easy: "fácil", medium: "média", hard: "difícil" } as const;
-
-/** Selo de proveniência (C2): verificada/comunitária/ia. */
-const SOURCE_BADGE: Record<SourceClass, string> = {
-  verificada: "verificada",
-  comunitária: "comunitária",
-  ia: "IA",
-};
-
-/** D14-2e: status exportado para teste — a cor segue o MESMO critério do
- * rótulo (melhor conteúdo), nunca duas fontes diferentes. */
-export function statusOf(
-  stat: QuestionStat | undefined,
-  taskType: QuestionMeta["taskType"],
-  now: number,
-): { label: string; dot: string; pill: string } {
-  if (!stat || stat.attempts === 0)
-    return {
-      label: "não tentada",
-      dot: "bg-muted-foreground/40",
-      pill: "bg-secondary text-muted-foreground",
-    };
-  if (isMasteredStat(stat, taskType)) {
-    return {
-      label: `dominada · ${stat.bestContent}%`,
-      dot: "bg-success",
-      pill: "bg-success/10 text-success",
-    };
-  }
-  const due = stat.dueAt <= now ? " · revisar" : "";
-  if (taskType === "read_aloud" && (stat.bestContent ?? 0) >= 90) {
-    return {
-      label: `conteúdo ok · ritmo a ajustar${due}`,
-      dot: "bg-warning",
-      // D15-4a: texto âmbar sobre fundo âmbar translúcido usa --warning-ink (AA nos 2 temas).
-      pill: "bg-warning/10 text-warning-ink",
-    };
-  }
-  const best = stat.bestContent ?? 0;
-  return {
-    label: `melhor ${stat.bestContent}%${due}`,
-    dot: best >= 70 ? "bg-warning" : "bg-destructive",
-    pill: best >= 70 ? "bg-warning/10 text-warning-ink" : "bg-destructive/10 text-destructive",
-  };
-}
 
 export function QuestionRow({
   meta,

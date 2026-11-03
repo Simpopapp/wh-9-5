@@ -8,8 +8,8 @@ export function dayKey(ts: number): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
-/** Meia-noite local da chave "YYYY-MM-DD" (null se inválida). */
-export function keyToMidnight(key: string): number | null {
+/** Meia-noite local da chave "YYYY-MM-DD" (null se inválida). D15-6c: uso interno do módulo. */
+function keyToMidnight(key: string): number | null {
   const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(key);
   if (!m) return null;
   const [, y, mo, d] = m.map(Number) as unknown as [string, number, number, number];
@@ -34,8 +34,8 @@ export function lastDayKeys(days: number, now = Date.now()): string[] {
   return out;
 }
 
-/** true se `a` é estritamente anterior a `b` (chaves válidas). */
-export function isBeforeDayKey(a: string, b: string): boolean {
+/** true se `a` é estritamente anterior a `b` (chaves válidas). D15-6c: sem consumidores externos — uso interno. */
+function isBeforeDayKey(a: string, b: string): boolean {
   const ta = keyToMidnight(a);
   const tb = keyToMidnight(b);
   if (ta === null || tb === null) return false;
