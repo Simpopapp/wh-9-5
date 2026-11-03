@@ -36,5 +36,14 @@ export default tseslint.config(
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
+  {
+    files: ["src/components/ui/**/*.{ts,tsx}"],
+    rules: {
+      // D15-6d (deliberado): primitivas shadcn/ui mantidas na forma upstream —
+      // variants/hooks (badgeVariants, useSidebar…) exportados junto do
+      // componente por convenção da própria biblioteca; não reestruturamos.
+      "react-refresh/only-export-components": "off",
+    },
+  },
   eslintPluginPrettier,
 );

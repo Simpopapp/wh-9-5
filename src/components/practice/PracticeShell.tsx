@@ -193,13 +193,15 @@ export function PracticeShell({
 
   // ---- Agenda da questão ----
   const dueAt = stats.get(question.id)?.dueAt;
-  const dueLabel = useMemo(() => {
+  // D15-6d: rótulo recalculado por render (barato) — fica sempre fresco e o memo
+  // perde a dependência artificial de app.attempts.length (warning de lint honesto).
+  const dueLabel = (() => {
     if (!dueAt) return null;
     const now = Date.now();
     if (dueAt <= now) return "Revisar hoje";
     const days = Math.ceil((dueAt - now) / 86_400_000);
     return `Revisão em ${days} ${days === 1 ? "dia" : "dias"}`;
-  }, [dueAt, app.attempts.length]);
+  })();
 
   const idx = Math.max(
     0,
@@ -262,7 +264,7 @@ export function PracticeShell({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [prevId, nextId, question.id, navigate]);
+  }, [prevId, nextId, question.id, navigate, loadDraft]);
 
   const hasNote = storedNote.length > 0;
   const preview = mode === "preview";
