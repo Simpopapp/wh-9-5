@@ -248,7 +248,7 @@ function ProgressPage() {
                             </span>
                           ) : null}
                         </span>
-                        <span className="flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
                           <span className="tabular-nums">
                             {r.attempted}/{r.total} cobertas ({r.coverage}%)
                           </span>
