@@ -81,7 +81,7 @@ def backup_payloads() -> dict[str, bytes]:
         "exportedAt": "2026-11-03T00:00:00.000Z",
         "attempts": [
             {
-                "qid": [RA_QID],
+                "qid": RA_QID,
                 "ts": now - 2 * day,
                 "taskType": "read_aloud",
                 "mode": "manual",
@@ -91,7 +91,7 @@ def backup_payloads() -> dict[str, bytes]:
                 "durationMs": 1000,
             },
             {
-                "qid": [RA_QID],
+                "qid": RA_QID,
                 "ts": now - 1 * day,
                 "taskType": "read_aloud",
                 "mode": "manual",
@@ -101,7 +101,7 @@ def backup_payloads() -> dict[str, bytes]:
                 "durationMs": 1000,
             },
             {
-                "qid": [WFD_QID],
+                "qid": WFD_QID,
                 "ts": now - 3 * 60_000,
                 "taskType": "wfd",
                 "mode": "manual",
@@ -121,7 +121,7 @@ def backup_payloads() -> dict[str, bytes]:
         "exportedAt": "2026-11-03T00:00:00.000Z",
         "attempts": [
             {
-                "qid": [WFD_QID],
+                "qid": WFD_QID,
                 "ts": now - 30 * 60_000,
                 "taskType": "wfd",
                 "mode": "manual",
