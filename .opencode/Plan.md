@@ -20,7 +20,9 @@ O trabalho agentico de remix é guiado por 3 arquivos (N = 1 neste projeto; com 
 
 ### Cancelamento de remix
 
-- ocorre se os 3 pilares estiverem null
+- ocorre somente se: os 3 pilares do {N} vigente estiverem "null" (ou inexistentes).
+- quando o remix for cancelado: use "ask" para coletar o conteúdo de "project{n}.md"
+- Não realize mais nada após isso. (a criação dos outros 2 outros pilares e desenvolvimento do projeto só acontece após a reativação do remix por meio dos gatilhos de remix). 
 
 ### Como criar o que falta + numero de linhas esperado de cada um
 - **PRD:** derive do planejamento (e do roadmap, se existir). Você conhece o ambiente melhor que o planejamento: confirme no código o que ele afirma, escolha a melhor solução técnica, escreva escopo por fase e critérios de aceite. Não copie o planejamento. (min: 500 / max: 1000) (obs: o agente à fazer algo grande e bem feito num nivel que desafie suas proprias capacidades agenticas ao limite de seu potencial. o potencial do projeto em hipotese alguma deve ser subestimado, a ideia é atingir o maximo do potencial e correndo o risco de errar pelo "mais" e nunca pelo "menos", planeje com maestria o conteudo do arquivo)
