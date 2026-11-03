@@ -21,7 +21,8 @@ O trabalho agentico de remix é guiado por 3 arquivos (N = 1 neste projeto; com 
 ### Cancelamento de remix
 
 - ocorre somente se: os 3 pilares do {N} vigente estiverem "null" ou inexistentes (se houverem {N} anteriores, o {N} vigente é o proximo, que deverá ser criado se o roadmap do ultimo {N} existente estiver concluido). 
-- quando o remix for cancelado: use "ask" para coletar o conteúdo de "project{n}.md". (esse é o único caso onde "ask" é permitido).
+- quando o remix for cancelado: use "ask" (COM CAMPO PARA INSERIR TEXTO), para coletar o conteúdo de "project{n}.md". (esse é o único caso onde "ask" é permitido).
+- o conteúdo inserido pelo usuário em ask deve ser colado em "project{n}.md" e nenhuma outra ação deve ser realizada. (pois o remix está cancelado e essa ação NÃO REATIVA ELE).
 - Não realize mais nada após isso. (a criação dos outros 2 outros pilares e desenvolvimento do projeto só acontece após a reativação do remix por meio dos gatilhos de remix). 
 
 ### Como criar o que falta + numero de linhas esperado de cada um
